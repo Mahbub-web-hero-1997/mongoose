@@ -82,11 +82,11 @@ userSchema.methods.generateAccessToken = async function () {
       expiresIn: process.env.ACCESS_TOKEN_EXPIRY.trim(),
     }
   );
-  console.log({
-    SecretKey: process.env.ACCESS_TOKEN_SECRET_KEY,
-    Token: token,
-    expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
-  });
+  // console.log({
+  //   SecretKey: process.env.ACCESS_TOKEN_SECRET_KEY,
+  //   Token: token,
+  //   expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
+  // });
   return token;
 };
 userSchema.methods.generateRefreshToken = function () {

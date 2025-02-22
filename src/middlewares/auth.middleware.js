@@ -9,14 +9,14 @@ const verifyJwt = asyncHandler(async (req, _, next) => {
       req.cookies?.accessToken ||
       req.header("Authorization")?.replace("Bearer ", "");
 
-    console.log("Received Token:", token);
+    // console.log("Received Token:", token);
 
     if (!token) {
       throw new ApiError(401, "Unauthorized: No token provided");
     }
 
-    const decodedWithoutVerify = jwt.decode(token, { complete: true });
-    console.log("Decoded Token (Without Verification):", decodedWithoutVerify);
+    // const decodedWithoutVerify = jwt.decode(token, { complete: true });
+    // console.log("Decoded Token (Without Verification):", decodedWithoutVerify);
 
     // Verify token
     const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET_KEY);
